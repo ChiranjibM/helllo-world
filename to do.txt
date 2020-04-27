@@ -1,0 +1,6 @@
+- have complete understanding on the videos
+- get well prepared for kt
+- create two factor auth on github repo
+- work on the bash script
+- to check how shell script logs will be shown in jenkins console.
+- delete script optimization - git log --diff-filter=D --summary | grep delete | awk '{print $4}' | sed '/^$/d' | head -1

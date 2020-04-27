@@ -1,0 +1,72 @@
+P&G is a consumer goods company.
+TFM project name - trade funds management ; which deals with promotion funds.
+
+java e script used in siebel.
+
+siebel and siebel objects deployment.
+
+Ramadas Ganeshan ( Operation delivery manager), sumant(delivery manager of TFM project)
+
+4 regions , each region will have SLM( from dxc).
+
+L2 -DXC, L1 -infy, L3 - Accenture, db team from oracle
+
+dxc focus on uat and prod.
+
+siebel migration plan automation application called as optima
+
+dxc take care of uat and prod
+
+4 main components
+
+- jenkins
+- siebele eim(enterprise integration manager which is windows server) - interface , eim tables responsible for data transfer from and to other data sources 
+or external systems like sap, eklon.
+- siebel + siebel disa is the application server of optima.
+- oracle exadata hosted on oracle linux and supported by oracle(dedicated machine to run oracle databases)
+
+jenkins server hosted on onpremise linux which is not a dedicated servers which also contains configuration scripts like plsql/shell scripts which is trigerred by controlM(job scheduling tool).
+
+
+Siebel - promotion , fund , revenue data (optima application)
+Siebel DISA (desktop integration siebel agent)- test engine which help to do automated siebel testing (used by L3)
+
+each region has 2 windows server and backend has oracle hexadata database hosted on oracle linux( supported by oracle team).
+
+migration plan automation operations
+
+- lov (list of values)
+- irr (incremental runtime repository)
+
+objects deployment
+All these objects present in gitlab and will move to github.
+- windows
+- windows anaplan
+- linux
+- db objects
+
+siebel migration plan automation runs on rest end point or http calls.
+
+Flow
+trigger > opeartion status check > STA(separate jenkins job which is built by L3) > status email
+
+
+once jenkins job is triggered , it executes a bash script which will ccommunicate with scm to fetch the above objects and deploys in respective servers.
+
+ongoing tasks:
+- jenkins github connectivity
+- Gitlab to github migration
+- Repository grouping and consolidation
+- migrate issues to JIRA
+
+Through lov and irr jenkins job we give the plan name and we do a http call to siebel migration plan which consists of src and dest so that workspace will migrate from src to dest.S
+
+
+for issue, raise incident else raise FR (for upgrading or running cmds as root user)
+
+TX - transactional application (siebel crm application)
+AX - analytics application based on siebel obi(oracle business intelligence tool)	
+
+MAIN role in transactional :  db objects , tx windows objects, tx linux objects, tx anaplan objects
+Main role in analytics : db objects, db metadata objects and ax windows objects	
+
