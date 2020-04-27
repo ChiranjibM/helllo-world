@@ -1,8 +1,6 @@
 P&G is a consumer goods company.
 TFM project name - trade funds management ; which deals with promotion funds.
 
-java e script used in siebel.
-
 siebel and siebel objects deployment.
 
 Ramadas Ganeshan ( Operation delivery manager), sumant(delivery manager of TFM project)
